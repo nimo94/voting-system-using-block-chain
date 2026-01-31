@@ -17,8 +17,7 @@ EMAIL_ADDRESS = 'your_email@example.com'
 EMAIL_PASSWORD = 'your_email_password'
 Assign them valid credentials.
 
-Note: See References
- for guidance.
+Note: See References for guidance.
 
  Development Email Handling:
 To avoid hitting email API limits during development, modify the email sending code in views.py:
