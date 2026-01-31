@@ -11,7 +11,6 @@ This web platform allows users to cast their votes securely using blockchain tec
 
    ```bash
    pip install -r requirements.txt
-3. Configure Email:
 Open Election/settings.py and locate the following variables:
 
 EMAIL_ADDRESS = 'your_email@example.com'
