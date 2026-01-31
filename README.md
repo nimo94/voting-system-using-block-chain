@@ -42,5 +42,5 @@ Navigate to the directory containing manage.py and run:
 python manage.py runserver
 
 
-Access the Platform:
+4. Access the Platform:
 Open the URL shown in the terminal. By default, it is: http://127.0.0.1:8000
