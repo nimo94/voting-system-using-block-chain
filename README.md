@@ -1,49 +1,46 @@
-# Voting System using Block-Chain
+# Blockchain-Based Voting System
 
-A user can cast his vote by visiting this web platform. For web server scripting we have used python based web framework **`Django`**.
+This web platform allows users to cast their votes securely using blockchain technology. The backend of the system is built with the Python web framework **`Django`**.
 
+---
 
+## How to Run
 
-## How to run
+1. **Internet Connection:** Ensure your device is connected to the internet.  
+2. **Install Dependencies:** Install all required Python packages using `pip`. The main dependencies are listed in `requirements.txt`.
 
-1. Make sure you are connected to the internet.
-2. Install all the (pip) dependency packages (main packages are listed in `requirements.txt`).
-3. Locate `EMAIL_ADDRESS` and `EMAIL_PASSWORD` variable in `Election/settings.py` file and assign your valid credentials. (See [References](#EmailCredentials))
-4. Make sure email sending is allowed (while development process sending email every time is not a good idea because API allows us to send email only for limited no. of times.).
+   ```bash
+   pip install -r requirements.txt
+3. Configure Email:
+Open Election/settings.py and locate the following variables:
 
+EMAIL_ADDRESS = 'your_email@example.com'
+EMAIL_PASSWORD = 'your_email_password'
+Assign them valid credentials.
 
-​		For this make sure `send_otp()` method in `views.py` file looks like this:
+Note: See References
+ for guidance.
 
-```python
-...
+ Development Email Handling:
+To avoid hitting email API limits during development, modify the email sending code in views.py:
+
+In send_otp() method:
+
 [success, result] = send_email_otp(email_input)
 # [success, result] = [True, '0']
-...
-```
 
-​		and `get_parties()` method in same file (`views.py`) looks like this:
 
-```python
-...
+In get_parties() method:
+
 send_email_private_key(request.session['email-id'], private_key)
 # print(private_key)
-...
-```
-
-5. Locate `manage.py` file and run `python manage.py runserver` in the same directory.
-
-6. Locate the URL provided in the terminal and access that. by default it is [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 
+Run the Server:
+Navigate to the directory containing manage.py and run:
 
-## References
+python manage.py runserver
 
-- <a name="EmailCredentials">Why and How to add Email credentials:</a>
 
-  How and Why: https://www.youtube.com/watch?v=JRCJ6RtE3xU (Watch out first 2 minutes of this video)
-
-  https://myaccount.google.com/apppasswords
-
-  https://myaccount.google.com/lesssecureapps
-
-  
+Access the Platform:
+Open the URL shown in the terminal. By default, it is: http://127.0.0.1:8000
